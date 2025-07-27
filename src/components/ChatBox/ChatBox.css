@@ -191,24 +191,9 @@
     overflow-y: auto;   /* ✅ Enable vertical scroll */
   }
 
-  .chat-box {
-    width: 100%;
-    height: 100dvh;
-    border-radius: 0;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
+ 
 
-  .chat-container {
-    width: 100%;
-    max-width: 1000px;
-    background-color: aliceblue;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    height: 100dvh;
-    overflow: hidden; /* ✅ Keep this to prevent grid scroll leaks */
-  }
+
 
   .chat-container > *:not(.chat-box) {
     display: none;
@@ -222,14 +207,5 @@
     display: none;
   }
 
-  .chat-msg {
-    flex: 1;
-    overflow-y: auto; /* ✅ Enable scroll for messages */
-    -webkit-overflow-scrolling: touch; /* ✅ Smooth scroll on iOS */
-    padding: 10px;
-    padding-bottom: 70px; /* Space for input bar */
-    display: flex;
-    flex-direction: column-reverse;
-    background-color: #f0f2f5;
-  }
+
 }
