@@ -184,28 +184,19 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 /* Mobile Styles */
-@media (max-width: 900px) {
-  html, body {
-    height: auto; /* ✅ Allow content to scroll */
-    overflow-x: hidden; /* ✅ Only restrict horizontal overflow */
-    overflow-y: auto;   /* ✅ Enable vertical scroll */
+
+@media (max-width:900px){
+  .chat-box{
+    width: :100%;
+    justify-content:center;
   }
-
- 
-
-
-
-  .chat-container > *:not(.chat-box) {
-    display: none;
-  }
-
   .chat-user .arrow {
     display: block;
   }
-
   .chat-user .help {
     display: none;
   }
 
-
 }
+
+
