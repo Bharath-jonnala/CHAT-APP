@@ -1,6 +1,20 @@
-.chat-box {
+/* Reset + Full Page Setup */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
+  background-color: #f0f2f5;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Chat Box */
+.chat-box {
   width: 100%;
   max-width: 500px;
   min-width: 300px;
@@ -13,6 +27,7 @@
   background-color: #fff;
   overflow: hidden;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 
 /* Header */
@@ -23,7 +38,6 @@
   padding: 16px 20px;
   background-color: #f5f7fa;
   border-bottom: 1px solid #e0e0e0;
-  position: relative;
 }
 
 .chat-user img {
@@ -55,23 +69,31 @@
   cursor: pointer;
 }
 
-/* Chat message area */
+.chat-user .arrow {
+  display: none;
+}
+
+/* Chat Messages */
 .chat-msg {
   flex: 1;
   overflow-y: auto;
   display: flex;
   flex-direction: column-reverse;
   padding-bottom: 17px;
+  padding-top: 10px;
+  background-color: #f0f2f5;
 }
 
-/* Message bubbles */
-.s-msg div img, .r-msg div img {
+/* Message Bubbles */
+.s-msg div img,
+.r-msg div img {
   width: 27px;
   aspect-ratio: 1/1;
   border-radius: 50px;
 }
 
-.s-msg, .r-msg {
+.s-msg,
+.r-msg {
   display: flex;
   align-items: end;
   justify-content: end;
@@ -99,7 +121,8 @@
   border-radius: 8px 8px 8px 0px;
 }
 
-.s-msg div, .r-msg div {
+.s-msg div,
+.r-msg div {
   text-align: center;
   font-size: 9px;
 }
@@ -114,7 +137,7 @@
   border-radius: 10px;
 }
 
-/* Welcome view */
+/* Welcome View */
 .chat-welcome {
   width: 100%;
   display: flex;
@@ -134,6 +157,7 @@
   color: #383838;
 }
 
+/* Image Bubbles */
 .msg-image {
   max-width: 250px;
   max-height: 250px;
@@ -144,7 +168,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Input area */
+/* Input Area */
 .chat-input {
   display: flex;
   align-items: center;
@@ -183,15 +207,17 @@
   transform: scale(1.1);
 }
 
-.chat-user .arrow {
-  display: none;
-}
-
-/* Mobile styles */
+/* Mobile Styles */
 @media (max-width: 900px) {
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
   .chat-box {
     width: 100%;
-    justify-content: center;
+    height: 100vh;
+    border-radius: 0;
   }
 
   .chat-user .arrow {
@@ -200,5 +226,9 @@
 
   .chat-user .help {
     display: none;
+  }
+
+  .chat-msg {
+    padding-bottom: 70px; /* space for input on mobile */
   }
 }
