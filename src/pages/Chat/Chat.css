@@ -7,7 +7,7 @@
 
 }
 .chat-container {
-  width: 100%;
+  width: 95%;
   height: 100vh;
   max-width: 1000px;
   background-color: aliceblue;
@@ -20,26 +20,11 @@
   color: white;
 }
 
-@media (max-width: 900px) {
-  .chat-container {
+@media  (max-width:900px){
+  .chat-container{
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100dvh;
   }
-
-  .chat-container > *:not(.chat-box) {
-    display: none; /* Hide LeftSideBar & RightSideBar */
-  }
-
-  .chat-box {
-    flex: 1;
-    height: 100%;
-    width: 100%;
-    border-radius: 0;
-  }
-
-  .loading {
+  .loading{
     font-size: 30px;
   }
 }
