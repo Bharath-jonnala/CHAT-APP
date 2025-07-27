@@ -1,7 +1,7 @@
 {
   "name": "chat-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "homepage": "https://Bharath-jonnala.github.io/chat-app",
   "scripts": {
@@ -9,9 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "predeploy": "npm run build",
     "build:gh": "vite build --mode gh-pages",
-  "deploy": "npm run build:gh && gh-pages -d dist"
+    "deploy": "npm run build:gh && gh-pages -d dist"
   },
   "dependencies": {
     "dom": "^0.0.3",
@@ -33,14 +32,7 @@
     "globals": "^16.2.0",
     "vite": "^7.0.0"
   },
-  "compilerOptions": {
-    "baseUrl": "src"
-  },
-  "include": [
-    "src"
-  ],
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-  "main": "eslint.config.js",
+  "description": "React chat app with Vite and Firebase",
   "keywords": [],
   "author": "",
   "license": "ISC"
