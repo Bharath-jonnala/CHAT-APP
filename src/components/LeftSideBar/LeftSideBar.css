@@ -1,0 +1,179 @@
+.ls {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  /* your existing styles */
+}
+.ls {
+    background-color: #001030;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px 15px;
+    width: 250px; /* Fixed width to prevent size changes */
+    min-width: 250px; /* Ensure minimum width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.ls-top {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ls-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.logoleftsidebar {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.menu img {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.ls-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.ls-search img {
+    position: absolute;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+}
+
+.ls-search input {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    outline: none;
+    color: white;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.ls-search input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.ls-list {
+    flex: 1;
+    padding: 0;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.friends {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-left: 3px solid transparent;
+}
+
+.friends:hover {
+    background-color: #1c0cd0e8;
+}
+
+.friends img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.friends div {
+    flex: 1;
+    overflow: hidden;
+}
+
+.friends p {
+    margin: 0;
+    font-weight: 500;
+    color: white;
+    font-size: 15px;
+}
+
+.friends span {
+    display: block;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.friends:hover span {
+    color: white;
+}
+
+.ls-nav .menu {
+    position: relative;
+    padding: 10px 0px;
+}
+
+.menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 130px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    display: none;
+    z-index: 1000; /* Ensure submenu is above other elements */
+}
+
+.menu:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu hr {
+    border: none;
+    height: 1px;
+    background: #a4a4a4;
+    margin: 8px 0px;
+}
+
+.sub-menu p {
+    cursor: pointer;
+    margin: 0;
+    padding: 3px 0; 
+    display: block; /* Full width hitbox */
+    line-height: 1.5; /* Improve text alignment */
+    transition: color 0.2s, text-decoration 0.2s;
+}
+
+.sub-menu p:hover {
+    color: #1c0cd0;
+    text-decoration: underline;
+}
+.friends.border img{
+    border: 3px solid #07fff3;
+
+
+}
+.friends.border div span{
+    color:#07fff3;
+}
+@media (max-width:900px){
+    .ls{
+        width: 100%;
+    }
+}
