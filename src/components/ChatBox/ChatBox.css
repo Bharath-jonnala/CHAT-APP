@@ -3,33 +3,34 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   background-color: #f0f2f5;
-  /* overflow: hidden; ❌ REMOVE THIS */
-  overflow-x: hidden; /* ✅ Allow vertical scrolling on mobile */
 }
-
 
 #root {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
 }
+
 
 /* Chat Box */
 .chat-box {
-  width: 100%;
-  max-width: 500px;
-  min-width: 300px;
-  height: 100dvh; /* ✅ Use full screen height safely */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 100dvh;
+  max-width: 500px;
+  width: 100%;
+  background-color: white;
   border-radius: 16px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-  background-color: #fff;
   overflow: hidden;
-  box-sizing: border-box;
 }
+
 
 
 
@@ -82,10 +83,11 @@ html, body {
   overflow-y: auto;
   display: flex;
   flex-direction: column-reverse;
-  padding: 10px 0;
+  padding: 10px;
   background-color: #f0f2f5;
-  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch; /* iOS */
 }
+
 
 
 
@@ -223,8 +225,9 @@ html, body {
 /* Mobile Styles */
 @media (max-width: 900px) {
   html, body {
-    height: 100%;
-    overflow: hidden;
+    height: auto; /* ✅ Allow content to scroll */
+    overflow-x: hidden; /* ✅ Only restrict horizontal overflow */
+    overflow-y: auto;   /* ✅ Enable vertical scroll */
   }
 
   .chat-box {
@@ -232,16 +235,19 @@ html, body {
     height: 100dvh;
     border-radius: 0;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
   }
+
   .chat-container {
-  width: 95%;
-  height: 100dvh;
-  max-width: 1000px;
-  background-color: aliceblue;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  overflow: hidden;
-}
+    width: 100%;
+    max-width: 1000px;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 100dvh;
+    overflow: hidden; /* ✅ Keep this to prevent grid scroll leaks */
+  }
 
   .chat-container > *:not(.chat-box) {
     display: none;
@@ -256,6 +262,14 @@ html, body {
   }
 
   .chat-msg {
-    padding-bottom: 70px; /* space for input on mobile */
+    flex: 1;
+    overflow-y: auto; /* ✅ Enable scroll for messages */
+    -webkit-overflow-scrolling: touch; /* ✅ Smooth scroll on iOS */
+    padding: 10px;
+    padding-bottom: 70px; /* Space for input bar */
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #f0f2f5;
   }
 }
+
