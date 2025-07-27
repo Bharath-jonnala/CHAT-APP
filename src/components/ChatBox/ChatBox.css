@@ -18,7 +18,7 @@ html, body {
   width: 100%;
   max-width: 500px;
   min-width: 300px;
-  height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,8 +27,8 @@ html, body {
   background-color: #fff;
   overflow: hidden;
   box-sizing: border-box;
-  margin: 0 auto;
 }
+
 
 /* Header */
 .chat-user {
@@ -79,10 +79,11 @@ html, body {
   overflow-y: auto;
   display: flex;
   flex-direction: column-reverse;
-  padding-bottom: 17px;
-  padding-top: 10px;
+  padding: 10px 0;
   background-color: #f0f2f5;
 }
+
+
 
 /* Message Bubbles */
 .s-msg div img,
@@ -176,7 +177,12 @@ html, body {
   border-top: 1px solid #e0e0e0;
   background-color: #f9f9f9;
   gap: 10px;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom));
 }
+
 
 .chat-input input[type="text"] {
   flex: 1;
